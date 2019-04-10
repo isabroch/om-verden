@@ -1,0 +1,141 @@
+footer {
+  background: var(--cPink);
+  width: 100vw;
+  z-index: 20;
+  margin-top: 164px;
+}
+
+footer .logo {
+  display: block;
+  text-align: center;;
+  transform-origin: 40% 50%;
+  transition: 0.2s;
+  width: 100%;
+  padding: 0px 20px;
+
+  img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    min-width: 50px;
+  }
+}
+
+.footerWrapper {
+  @include max(full);
+  display: grid;
+  grid-template-columns: minmax(110px, 1fr) minmax(500px, var(--sPart)) minmax(110px, 1fr);
+  align-items: center;
+  padding: 39px 0 52px 0;
+
+  @media (max-width: $bpLarge) {
+    grid-template-columns: minmax(110px, 1fr) minmax(500px, var(--sPart)) minmax(50px, 1fr);
+  }
+
+  @media (max-width: $bpMedium) {
+    grid-template-columns: 34px 1fr;
+    grid-column-gap: 11px;
+    padding: 10px 8px;
+  }
+}
+
+.footerWrapper-mid {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.address {
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 240px;
+
+  @media (max-width: $bpLarge) {
+    justify-content: flex-start;
+    * {
+      margin: 5px 0;
+    }
+  }
+}
+
+.footerWrapper-side {
+  // max-width: 135px;
+  justify-self: center;
+}
+
+.tilmeld {
+  form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+
+    * {
+      margin: 5px 0;
+    }
+  }
+
+  input {
+    display: block;
+    @extend .f3;
+    border: 1px black solid;
+  }
+
+  [type='button'] {
+    color: white;
+    padding: 12px 33px;
+    border-radius: 8px;
+    background: var(--cGreen);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+    @extend .fwbold;
+
+    @media (max-width: $bpLarge) { 
+      padding: 5px 11px;
+      border-radius: 3px;
+    }
+  }
+
+  [type='email'] {
+    padding: 12px 17px;
+
+    @media (max-width: $bpLarge) { 
+      padding: 5px 9px;
+    }
+  }
+}
+
+.bearFooter {
+  position: absolute;
+  
+  top: -106px;
+  left: 2px;
+
+  content: '';
+  display: block;
+
+  width: 82px;
+  height: 67px;
+
+  background: url(images/bear.svg) no-repeat;
+  background-size: contain;
+
+  animation: peekingBear 1s 1 both ease;
+  animation-play-state: paused;
+
+  @media (max-width: $bpMedium) { 
+    top: -76px;
+  }
+}
+
+@keyframes peekingBear {
+  from {
+    background-position: 0 80px;
+  }
+
+  to {
+    background-position: 0 18px;
+  }
+}

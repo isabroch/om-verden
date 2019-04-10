@@ -1,0 +1,35 @@
+@import 'reset';
+@import 'resources';
+
+/* Header */
+@import 'header';
+
+/* Footer */
+@import 'footer';
+
+/* General Styles */
+html {
+  background: var(--grayBackground);
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: grid;
+  justify-items: center;
+  @extend .fwnorm;
+}
+
+main {
+  @include max(partial, false);
+  margin-left: 15px;
+
+  @media (max-width: 1225px) {
+    margin-left: 0;
+  }
+}
+
+/* Index Page */
+@import 'index';
+
+@import 'easter';
